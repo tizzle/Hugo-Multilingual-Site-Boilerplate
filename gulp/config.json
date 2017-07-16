@@ -1,0 +1,32 @@
+{
+    "src_static" : "src-static",
+    "hugo_static" : "hugo/static",
+
+    "styles" : {
+        "src_sass" : "src/styles/stylesheet.scss",
+        "filename_sass" : "stylesheet.css",
+        "dest" : "src-static/css"
+    },
+
+    "scripts" : {
+        "filename_app" : "scripts.js",
+        "src_global" : "src/scripts/app/global/*.js",
+        "src_vendor_global" : "src/scripts/vendor/global/**/*.*",
+        "dest" : "src-static/js"
+    },
+
+    "fonts" : {
+      "src" : "src/fonts/**/*.*",
+      "dest" : "src-static/fonts"
+    },
+
+    "images" : {
+        "src" : "src/img/**/*.*",
+        "dest" : "src-static/img"
+    },
+
+    "svg" : {
+        "src" : "src/svg/**/*.svg",
+        "dest" : "src-static/svg"
+    }
+}

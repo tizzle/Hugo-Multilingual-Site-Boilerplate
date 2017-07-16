@@ -1,0 +1,30 @@
+.c_footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $color-white;
+	height: 32px;
+	overflow: hidden;
+
+	> div {
+		@include clearfix;
+
+		> nav {
+			width: 100%;
+
+			ul {
+				text-align: center;
+
+				li {
+					list-style: none;
+
+					> a {
+						padding: 8px;
+						font-size: $font-size-s;
+					}
+				}
+			}
+		}
+	}
+}

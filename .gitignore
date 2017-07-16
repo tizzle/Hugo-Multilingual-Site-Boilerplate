@@ -1,0 +1,7 @@
+.DS_Store
+public
+src-static
+hugo/static
+
+# node
+node_modules

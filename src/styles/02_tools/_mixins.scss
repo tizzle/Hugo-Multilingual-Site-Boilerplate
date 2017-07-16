@@ -1,0 +1,73 @@
+// MEDIA QUERIES
+@mixin phone-landscape {
+	 @media screen and (min-width: $break-s){
+		@content;
+	}
+}
+@mixin tablet {
+	 @media screen and (min-width: $break-m){
+		@content;
+	}
+}
+@mixin desktop {
+	 @media screen and (min-width: $break-l){
+		@content;
+	}
+}
+@mixin desktop-large {
+	 @media screen and (min-width: $break-xl){
+		@content;
+	}
+}
+@mixin desktop-extralarge {
+	 @media screen and (min-width: $break-xxl){
+		@content;
+	}
+}
+
+/* FONTS */
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+	@if $index {
+		 @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	@return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+	$extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_") );
+	$formats: ( otf: "opentype", ttf: "truetype" );
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+/* SHADOWS */
+@mixin shadow-1 {
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
+}
+
+@mixin shadow-none {
+	box-shadow: none;
+}
+
+/* CLEARFIX */
+@mixin clearfix {
+	&:after {
+		content: ".";
+		clear: both;
+		display: block;
+		visibility: hidden;
+		height: 0;
+		width: 0;
+	}
+}

@@ -1,0 +1,13 @@
+<footer class="c_footer">
+	<div>
+		<nav>
+			<ul class="o_container">
+				{{ range .Site.Menus.meta }}
+				<li>
+					<small><a href="{{.URL}}">{{ .Name }}</a></small>
+				</li>
+				{{ end }}
+			</ul>
+		</nav>
+	</div>
+</footer>

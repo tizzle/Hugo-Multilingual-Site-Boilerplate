@@ -1,0 +1,16 @@
+.c_popover{
+  &:hover .c_popover--content{
+    display:block;
+  }
+  .c_popover--content{
+    display:none;
+    position:absolute;
+    background: $color-white;
+    padding:16px;
+    @include shadow-1;
+
+    ul li{
+
+    }
+  }
+}

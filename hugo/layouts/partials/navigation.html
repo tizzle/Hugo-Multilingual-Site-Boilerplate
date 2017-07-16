@@ -1,0 +1,41 @@
+<div class="c_navigation">
+
+  <ul id="navigation" class="c_navbar__list-horizontal left">
+    {{- $currentNode := . -}}
+    {{ range .Site.Menus.main -}}
+      <li>
+        <a class="o_button narrow {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{ end }}" href="{{ .URL }}" {{ if eq .Identifier "external"}}target="blank" {{ end }}>
+          {{ .Name }}
+        </a>
+      </li>
+    {{- end }}
+  </ul>
+
+
+  {{ $len := len .Site.Languages }} {{ if eq $len 1 }} {{ else }}
+  <div class="c_popover hoverable right">
+    <div class="c_popover--trigger">
+      <a class="o_button">
+        {{ .Site.Language.LanguageName }}
+        <svg class="o_icon o_icon--small">
+          <use xlink:href="/svg/symbols.svg#arrow-down"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="c_popover--content">
+      <div class="o_popover__arrow"></div>
+      <ul>
+        {{ $currentNode := . }} {{ range .Site.Languages }}
+        <li>
+          {{ if $currentNode.URL }}
+            <a class="o_button {{ if eq $currentNode.Lang .Lang }}active{{ end }}" href="{{ $currentNode.Site.BaseURL }}{{ . }}{{ slicestr $currentNode.URL 3 }}">{{ .LanguageName }}</a>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  {{ end }}
+
+</div>

@@ -1,0 +1,45 @@
+baseURL = "http://mydomain.com"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+
+# ENGLSH
+
+[languages]
+[languages.en]
+  languageName = "English"
+  weight = 1
+  title = "My Hugo Website"
+  copyright = "© 2017 Everything is mine"
+  [languages.en.params]
+    link = "link-english"
+  [languages.en.htmlmetadata]
+    title = "My Hugo Website"
+    description = "This is my Hugo website."
+
+[[languages.en.menu.main]]
+url = "/en"
+name = "Home"
+identifier = "home"
+weight = 1
+
+
+# DEUTSCH
+
+[languages.de]
+  languageName = "Deutsch"
+  copyright = "Das ist alles meins"
+  title = "Meine Hugo Seite"
+  weight = 2
+  [languages.de.params]
+    link = "link-deutsch"
+  [languages.de.htmlmetadata]
+    title = "Meine Hugo Seite"
+    description = "Das ist meine Hugo Seite"
+
+[[languages.de.menu.main]]
+  url = "/de"
+  name = "Startseite"
+  identifier = "home"
+  weight = 1

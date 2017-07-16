@@ -1,0 +1,29 @@
+.o_container {
+	&.o_container--wrap {
+		@include clearfix;
+
+		> * {
+			float: left;
+		}
+	}
+
+	&.padding--large {
+		padding: 24px 12px;
+		@include phone-landscape {
+			padding: 24px;
+		};
+	}
+
+	&.padding--capped {
+		max-width: 900px + 48px;
+		margin: 0 auto;
+		padding: 24px 12px;
+		@include phone-landscape {
+			padding: 24px;
+		};
+	}
+
+	&.padding--nobottom {
+		padding-bottom: 0;
+	}
+}
