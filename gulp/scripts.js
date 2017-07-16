@@ -16,7 +16,7 @@ gulp.task('scripts-global', function() {
         .pipe(jshint())
         .pipe(jshint.reporter("default"))
         .pipe(concat( config.scripts.filename_app ))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest( config.scripts.dest ));
     return stream;
