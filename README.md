@@ -1,4 +1,4 @@
-# Olaf
+# Hugo Multilingual Website Boilerplate
 
 ## Getting started
 
